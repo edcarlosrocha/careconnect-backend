@@ -1,0 +1,66 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // Configurações para HTML
+  "html.format.enable": true,
+  "html.format.wrapLineLength": 120,
+  "html.format.indentInnerHtml": true,
+
+  // Configurações para CSS
+  "css.format.enable": true,
+  "scss.format.enable": true,
+  "less.format.enable": true,
+
+  // Configurações para JavaScript
+  "javascript.format.enable": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.semicolons": "remove",
+
+  // Configurações para JSON (pode incluir MongoDB-like data)
+  "json.format.enable": true,
+
+  // Configurações de comportamento do editor
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.autoGuessEncoding": true,
+
+  // Visual Studio Code embutido
+  "editor.defaultFormatter": "vscode.html-language-features",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // Configurações específicas para Markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80,
+    "editor.quickSuggestions": {},
+    "editor.suggestOnTriggerCharacters": false
+  },
+
+  // Controle de visualização e validação de Markdown
+  "markdown.preview.breaks": true,
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.validate.enabled": true,
+
+  // Configurações de estilo
+  "markdownlint.config": {
+    "default": true,
+    "MD013": false, // Desativa a regra de comprimento máximo de linha
+    "MD033": false  // Permite HTML em Markdown
+  }
+}
