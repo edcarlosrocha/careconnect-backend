@@ -1,6 +1,7 @@
 import express from 'express';
 import usuariosRoutes from './usuarios.routes.js';
 import notificacoesRoutes from './notificacoes.routes.js';
+import pagamentosRoutes from './pagamentos.routes.js';
 
 
 const router = express.Router();
@@ -12,5 +13,7 @@ router.get('/', (req, res) => {
 
 router.use('/usuarios', usuariosRoutes);
 router.use('/notificacoes', notificacoesRoutes);
+router.use('/pagamentos', pagamentosRoutes);
+
 
 export default router;

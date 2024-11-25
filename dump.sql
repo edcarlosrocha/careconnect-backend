@@ -25,3 +25,11 @@ CREATE TABLE notificacoes (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
+CREATE TABLE pagamentos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT NOT NULL,
+  valor DECIMAL(10, 2) NOT NULL,
+  status ENUM('pendente', 'concluido', 'falhou') DEFAULT 'pendente',
+  criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
