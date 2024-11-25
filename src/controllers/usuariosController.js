@@ -1,4 +1,5 @@
 import { createUsuario, getUsuarioById, updateUsuario, deleteUsuario, getAllUsuarios } from '../repositories/usuariosRepository.js';
+import jwt from 'jsonwebtoken';
 
 export const create = async (req, res) => {
   try {

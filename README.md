@@ -42,6 +42,8 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua-senha
 DB_NAME=careconnect
+
+JWT_SECRET=seu_token_secreto
 ```
 
 ## Execução

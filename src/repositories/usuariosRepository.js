@@ -1,14 +1,19 @@
 import db from '../database/connection.js';
+import bcrypt from 'bcryptjs';
 
 export const createUsuario = async (usuarioData) => {
   const { nome, email, senha, celular, endereco, perfil } = usuarioData;
+
+  // Criptografando a senha
+  const salt = await bcrypt.genSalt(10);
+  const senhaCriptografada = await bcrypt.hash(senha, salt);
 
   const query = `
     INSERT INTO usuarios (nome, email, senha, celular, endereco, perfil, criado_em)
     VALUES (?, ?, ?, ?, ?, ?, NOW())
   `;
 
-  const values = [nome, email, senha, celular, endereco, perfil];
+  const values = [nome, email, senhaCriptografada, celular, endereco, perfil];
   const [result] = await db.promise().query(query, values);
 
   return {
