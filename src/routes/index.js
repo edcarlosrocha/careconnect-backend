@@ -1,5 +1,6 @@
 import express from 'express';
 import usuariosRoutes from './usuarios.routes.js';
+import notificacoesRoutes from './notificacoes.routes.js';
 
 
 const router = express.Router();
@@ -10,5 +11,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/usuarios', usuariosRoutes);
+router.use('/notificacoes', notificacoesRoutes);
 
 export default router;
