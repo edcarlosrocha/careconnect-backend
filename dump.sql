@@ -33,3 +33,26 @@ CREATE TABLE pagamentos (
   criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+CREATE TABLE perfil_paciente (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT NOT NULL,
+  foto VARCHAR(255),
+  nome_completo VARCHAR(255) NOT NULL,
+  cpf VARCHAR(14) NOT NULL UNIQUE,
+  endereco VARCHAR(255),
+  tipo_sanguineo ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-') NOT NULL,
+  genero ENUM('masculino', 'feminino', 'outro') NOT NULL,
+  data_nascimento DATE NOT NULL,
+  horario_necessario ENUM('dia', 'noite') NOT NULL,
+  alergias BOOLEAN DEFAULT FALSE,
+  diabetes BOOLEAN DEFAULT FALSE,
+  altura DECIMAL(5, 2),
+  peso DECIMAL(5, 2),
+  resumo_cuidados TEXT,
+  criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+  atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+table perfil_paciente;
