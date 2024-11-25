@@ -55,4 +55,20 @@ CREATE TABLE perfil_paciente (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
-table perfil_paciente;
+CREATE TABLE perfil_cuidador (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT NOT NULL,
+  foto VARCHAR(255),
+  nome_completo VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  genero ENUM('masculino', 'feminino', 'outro') NOT NULL,
+  data_nascimento DATE NOT NULL,
+  cpf VARCHAR(14) NOT NULL UNIQUE,
+  endereco VARCHAR(255),
+  especialidade VARCHAR(255),
+  disponibilidade VARCHAR(255),
+  minhas_qualificacoes TEXT,
+  criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+  atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
