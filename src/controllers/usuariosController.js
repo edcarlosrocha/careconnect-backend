@@ -1,8 +1,5 @@
-// src/controllers/usuariosController.js
-
 import { createUsuario, getUsuarioById, updateUsuario, deleteUsuario, getAllUsuarios } from '../repositories/usuariosRepository.js';
 
-// Função para criar o usuário (já existente)
 export const create = async (req, res) => {
   try {
     const { nome, email, senha, celular, endereco, perfil } = req.body;
