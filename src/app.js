@@ -12,8 +12,9 @@ app.use(express.json());
 
 app.use('/api', router);
 
+const API_URL = process.env.API_URL || 'localhost';
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, API_URL, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });

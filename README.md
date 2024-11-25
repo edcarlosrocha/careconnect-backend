@@ -37,6 +37,7 @@ mysql -u root -p < dump.sql
 Crie um arquivo .env na raiz do projeto e adicione a configuração de variáveis necessárias:
 
 ```env
+API_URL=http://localhost
 PORT=5000
 DB_HOST=localhost
 DB_USER=root
