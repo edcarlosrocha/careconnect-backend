@@ -72,3 +72,12 @@ CREATE TABLE perfil_cuidador (
   atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+CREATE TABLE paciente_cuidador (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cuidador_id INT NOT NULL,
+  paciente_id INT NOT NULL,
+  data_associacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (cuidador_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  FOREIGN KEY (paciente_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
